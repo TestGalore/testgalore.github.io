@@ -5,10 +5,13 @@
 
 :root{
     font-size: max(2vw, 20px);
+    --main-bg-color: black;
+    --main-text-color: white;
 }
 
 html, body{
     height: 100%;
+    background-color: var(--main-bg-color);
 }
 
 @media(max-width: 450px){
@@ -48,22 +51,22 @@ html, body{
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--main-text-color);
 }
 
 #intro-content-text h1{
     font-size: max(5vw, 50px);
-    font-family: Arial, Helvetica, sans-serif
 }
 
 #intro-content-text span{
     font-size: max(3vw, 30px);
-    font-family: Arial, Helvetica, sans-serif
 }
 
 #profile-pic {
     height: max(200px, 20vw);
     width: max(200px, 20vw);;
-    background-color:black;
+    background-color: var(--main-text-color);
     border-radius: 9999px;
 }
 

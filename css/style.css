@@ -7,20 +7,35 @@
     font-size: max(2vw, 20px);
 }
 
+html, body{
+    height: 100%;
+}
+
 @media(max-width: 450px){
-    .intro-content{
+    #intro-content{
         flex-direction: column;
     }
 }
 
-.intro {
+/*remove scrollbar*/
+.container {
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/*remove scrollbar*/
+.container::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+
+#intro {
     display: flex;
     align-items: center;
     justify-content: center;
-    height:100vh;
+    height:100%;
 }
 
-.intro-content{
+#intro-content{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -28,26 +43,30 @@
 
 }
 
-.intro-content-text{
+#intro-content-text{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
 
-.intro-content-text h1{
+#intro-content-text h1{
     font-size: max(5vw, 50px);
     font-family: Arial, Helvetica, sans-serif
 }
 
-.intro-content-text span{
+#intro-content-text span{
     font-size: max(3vw, 30px);
     font-family: Arial, Helvetica, sans-serif
 }
 
-.profile-pic {
+#profile-pic {
     height: max(200px, 20vw);
     width: max(200px, 20vw);;
     background-color:black;
     border-radius: 9999px;
+}
+
+#projects {
+    height: 100%;
 }

@@ -4,14 +4,19 @@
 }
 
 :root{
-    font-size: max(2vw, 20px);
     --main-bg-color: black;
     --main-text-color: white;
 }
 
-html, body{
+html{
+    font-size: max(2vw, 20px);
     height: 100%;
+    width: 100%;
     background-color: var(--main-bg-color);
+}
+
+body{
+    min-height: 100%;
 }
 
 @media(max-width: 450px){

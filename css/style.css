@@ -25,6 +25,8 @@ body{
     }
 }
 
+/*------------------------Classes-------------------------*/
+
 /*remove scrollbar*/
 .container {
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
@@ -36,25 +38,23 @@ body{
     display: none;  /* Safari and Chrome */
 }
 
-#intro {
+.flex-container{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/*------------------------IDs-------------------------*/
+
+#intro {
     height:100%;
 }
 
 #intro-content{
-    display: flex;
-    align-items: center;
-    justify-content: center;
     gap: 1rem;
-
 }
 
 #intro-content-text{
-    display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
     font-family: Arial, Helvetica, sans-serif;
     color: var(--main-text-color);

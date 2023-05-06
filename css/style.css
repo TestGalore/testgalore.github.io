@@ -3,25 +3,29 @@
     box-sizing: border-box;
 }
 
+html{
+    font-size: 10px;
+    height: 100%;
+    width: 100%;
+}
+
 :root{
     --main-bg-color: black;
     --main-text-color: white;
 }
 
-html{
-    font-size: 10px;
-    background-color: var(--main-bg-color);
-}
-
 body{
     min-height: 100%;
     min-width: 100%;
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
 }
 
 @media only screen and (max-width: 500px){
     #intro-content{
         flex-direction: column-reverse;
     }
+
 }
 
 /*------------------------Classes-------------------------*/
@@ -34,7 +38,7 @@ body{
 
 /*remove scrollbar*/
 .container::-webkit-scrollbar { 
-    display: none;  /* Safari and Chrome */
+    display: auto;  /* Safari and Chrome */
 }
 
 .flex-container{
@@ -43,44 +47,131 @@ body{
     justify-content: center;
 }
 
-/*------------------------IDs-------------------------*/
+/*------------------------ProfileIDs-------------------------*/
+#intro{
+    position:relative;
+}
 
 #intro-content{
-    gap: max(2vw, 2rem);
-    min-width: max(25rem, 100%);
+    gap: 2rem;
+    min-width: 21rem;
     min-height: 100%;
-    margin-top: auto 0;
 }
 
 #intro-content-text{
     flex-direction: column;
     font-family: Arial, Helvetica, sans-serif;
     color: var(--main-text-color);
-    margin-left: 0 auto;
 }
 
 #intro-content-text h1{
-   font-size: max(5vw, 5rem);
+   font-size: 5rem;
    white-space:nowrap;
 }
 
 #intro-content-text span{
-    font-size: max(3vw, 3rem); 
+    font-size: 3rem; 
 }
 
-#profile-pic {
-    height: max(20rem, 20vw);
-    width: max(20rem, 20vw);
+#profile-pic{
+    height: 20rem;
+    width: 20rem;
     background-color: var(--main-text-color);
-    border-radius: 9999px;
-    overflow: hidden;
+    border-radius:50%;
 }
 
 #profile-pic img{
-    height: 100%;
-    margin: 0 auto;
+    height: 19rem;
+    width: 19rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+#arrow-director{
+    position:absolute;
+    left: 50%;
+    bottom: 1rem;
 }
 
 #projects {
+    /* doing height 100% only seems to make it the size of the view port
+    even if the body exceeds the size of the view port */
     height: 100%;
+    background-color: white;
 }
+
+/*------------------------Arrow-------------------------*/
+
+@-moz-keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      -moz-transform: translateY(0) rotate(45deg);
+      transform: translateY(0) rotate(45deg);
+    }
+    40% {
+      -moz-transform: translateY(-30px) rotate(45deg); 
+      transform: translateY(-30px) rotate(45deg);
+    }
+    60% {
+      -moz-transform: translateY(-15px) rotate(45deg);
+      transform: translateY(-15px) rotate(45deg);
+    }
+}
+@-webkit-keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      -webkit-transform: translateY(0) rotate(45deg);
+      transform: translateY(0) rotate(45deg);
+    }
+    40% {
+      -webkit-transform: translateY(-30px) rotate(45deg);
+      transform: translateY(-30px) rotate(45deg);
+    }
+    60% {
+      -webkit-transform: translateY(-15px) rotate(45deg);
+      transform: translateY(-15px) rotate(45deg);
+    }
+}
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      -moz-transform: translateY(0) rotate(45deg);
+      -ms-transform: translateY(0) rotate(45deg);
+      -webkit-transform: translateY(0) rotate(45deg);
+      transform: translateY(0) rotate(45deg);
+    }
+    40% {
+      -moz-transform: translateY(-30px) rotate(45deg);
+      -ms-transform: translateY(-30px) rotate(45deg);
+      -webkit-transform: translateY(-30px) rotate(45deg);
+      transform: translateY(-30px) rotate(45deg);
+    }
+    60% {
+      -moz-transform: translateY(-15px) rotate(45deg);
+      -ms-transform: translateY(-15px) rotate(45deg);
+      -webkit-transform: translateY(-15px) rotate(45deg);
+      transform: translateY(-15px) rotate(45deg);
+    }
+}
+  
+.arrow {
+    position: fixed;
+    bottom: 50px;
+    left: 50%;
+    margin-left: -20px;
+    width: 20px;
+    height: 20px;
+    border: solid var(--main-text-color);
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+  
+.bounce {
+    -moz-animation: bounce 2s infinite;
+    -webkit-animation: bounce 2s infinite;
+    animation: bounce 2s infinite;
+}
+  
+.fade {
+    opacity:0;
+    transition: 1s all ease-out;
+}
+  

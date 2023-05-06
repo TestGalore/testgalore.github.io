@@ -45,18 +45,18 @@ body{
 
 /*------------------------IDs-------------------------*/
 
-#intro {
-    min-height:100%;
-}
-
 #intro-content{
     gap: max(2vw, 2rem);
+    min-width: max(25rem, 100%);
+    min-height: 100%;
+    margin-top: auto 0;
 }
 
 #intro-content-text{
     flex-direction: column;
     font-family: Arial, Helvetica, sans-serif;
     color: var(--main-text-color);
+    margin-left: 0 auto;
 }
 
 #intro-content-text h1{

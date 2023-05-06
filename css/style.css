@@ -9,19 +9,18 @@
 }
 
 html{
-    font-size: max(2vw, 20px);
-    height: 100%;
-    width: 100%;
+    font-size: 10px;
     background-color: var(--main-bg-color);
 }
 
 body{
     min-height: 100%;
+    min-width: 100%;
 }
 
-@media(max-width: 450px){
+@media only screen and (max-width: 500px){
     #intro-content{
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
 }
 
@@ -47,11 +46,11 @@ body{
 /*------------------------IDs-------------------------*/
 
 #intro {
-    height:100%;
+    min-height:100%;
 }
 
 #intro-content{
-    gap: 1rem;
+    gap: max(2vw, 2rem);
 }
 
 #intro-content-text{
@@ -61,18 +60,25 @@ body{
 }
 
 #intro-content-text h1{
-    font-size: max(5vw, 50px);
+   font-size: max(5vw, 5rem);
+   white-space:nowrap;
 }
 
 #intro-content-text span{
-    font-size: max(3vw, 30px);
+    font-size: max(3vw, 3rem); 
 }
 
 #profile-pic {
-    height: max(200px, 20vw);
-    width: max(200px, 20vw);;
+    height: max(20rem, 20vw);
+    width: max(20rem, 20vw);
     background-color: var(--main-text-color);
     border-radius: 9999px;
+    overflow: hidden;
+}
+
+#profile-pic img{
+    height: 100%;
+    margin: 0 auto;
 }
 
 #projects {

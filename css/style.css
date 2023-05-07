@@ -24,6 +24,7 @@ body{
     min-width: 100%;
     background-color: var(--main-bg-color);
     color: var(--main-text-color);
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 /*------------------------Classes-------------------------*/
@@ -88,10 +89,9 @@ body{
     visibility: 100%;
 }
 
+
 #intro-content-text{
     flex-direction: column;
-    font-family: Arial, Helvetica, sans-serif;
-    color: var(--main-text-color);
     width: 20rem;
 }
 
@@ -146,6 +146,7 @@ body{
     gap: calc( (100vw - var(--project-card-width)) / 2);
     overflow-x: scroll;
     justify-content: flex-start;
+    scroll-behavior: smooth;
 }
 
 .project-item{
@@ -165,6 +166,7 @@ body{
     height: calc(var(--project-card-height) - 1rem);
     border-radius: 5rem;
     background-color:var(--main-text-color);
+    z-index: 2;
 }
 
 .project-item-text{
@@ -173,9 +175,14 @@ body{
     top: 0px;
     width: calc(var(--project-card-width) - 1rem);
     height: calc(var(--project-card-height) - 1rem);
+    padding: 3rem;
     border-radius: 5rem;
     border: 0.5rem solid;
     border-color: var(--main-text-color);
+    background-color:var(--main-bg-color);
+    z-index: 3;
+
+    font-size: 3rem;
 }
 
 

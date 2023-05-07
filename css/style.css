@@ -10,8 +10,9 @@ html{
 }
 
 :root{
-    --main-bg-color: black;
-    --main-text-color: white;
+    --main-bg-color: white;
+    --main-text-color: black;
+    --scrollbar-thumb-color: #1c1c1c;
 }
 
 body{
@@ -30,6 +31,14 @@ body{
 
 /*------------------------Classes-------------------------*/
 
+.flex-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*------------------------ScrollBar-------------------------*/
+
 /*remove scrollbar*/
 .container {
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
@@ -38,13 +47,23 @@ body{
 
 /*remove scrollbar*/
 .container::-webkit-scrollbar { 
-    display: auto;  /* Safari and Chrome */
+    display: normal;  /* Safari and Chrome */
 }
 
-.flex-container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+  
+/* Track */
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+  
+/* Handle */
+::-webkit-scrollbar-thumb{
+    background: var(--scrollbar-thumb-color);
+    border-radius:50px;
 }
 
 /*------------------------ProfileIDs-------------------------*/
@@ -56,6 +75,7 @@ body{
     gap: 2rem;
     min-width: 21rem;
     min-height: 100%;
+    visibility: 100%;
 }
 
 #intro-content-text{
@@ -97,7 +117,7 @@ body{
     /* doing height 100% only seems to make it the size of the view port
     even if the body exceeds the size of the view port */
     height: 100%;
-    background-color: white;
+    background-color: var(--main-bg-color);
 }
 
 /*------------------------Arrow-------------------------*/
@@ -155,12 +175,9 @@ body{
     position: fixed;
     bottom: 50px;
     left: 50%;
-    margin-left: -20px;
-    width: 20px;
-    height: 20px;
+    margin-left: -5px;
     border: solid var(--main-text-color);
     border-width: 0 3px 3px 0;
-    display: inline-block;
     padding: 3px;
 }
   

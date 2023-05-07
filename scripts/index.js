@@ -34,6 +34,7 @@ window.addEventListener('click', function() {
 })
 
 window.addEventListener("resize", function(){
+    projectContainer.scrollLeft = 0;
     scrollAmountTillNextProject = window.innerWidth - parseInt(style.getPropertyValue("gap"));
 });
 

@@ -266,7 +266,8 @@ body{
     }
     #project-container{
         flex-direction:column;
-        padding: 0rem 0rem;
+        padding: calc( (100vh - var(--project-card-height-r)) / 2) 0rem;
+
         width: var(--project-card-width-r);
         gap: calc( (100vh - var(--project-card-width-r)) / 2);
     }

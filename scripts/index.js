@@ -7,6 +7,6 @@ document.addEventListener('DOMContentLoaded', function() {
         } else{
             arrow.classList.remove('fade');
         }
-        
+
     });
 });

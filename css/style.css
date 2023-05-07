@@ -13,6 +13,10 @@ html{
     --main-bg-color: rgb(0, 0, 0);
     --main-text-color: rgb(255, 255, 255);
     --scrollbar-thumb-color: #1c1c1c;
+    --project-card-width: 40rem;
+    --project-card-height: 30rem;
+    --project-card-width-r: 30rem;
+    --project-card-height-r: 50rem;
 }
 
 body{
@@ -56,17 +60,18 @@ body{
 }
 
 /* width */
-::-webkit-scrollbar {
+.container::-webkit-scrollbar {
     width: 5px;
+    height: 10px;
 }
   
 /* Track */
-::-webkit-scrollbar-track {
+.container::-webkit-scrollbar-track {
     background-color: transparent;
 }
   
 /* Handle */
-::-webkit-scrollbar-thumb{
+.container::-webkit-scrollbar-thumb{
     background: var(--scrollbar-thumb-color);
     border-radius:5px;
 }
@@ -129,28 +134,27 @@ body{
     min-height: 100%;
     /*setting the min-width to 100% makes the projects overflow into the left ofthe screen*/
     /*despite having min-width of 37, it's still the lenght of the viewport?*/
-    min-width: 31rem;
+    min-width: calc( var(--project-card-width-r) );
     background-color: var(--main-bg-color);
 }
 
 #project-container{
     margin: 5rem 0;
-    padding: 0 20rem;
-    min-height:40rem;
-    min-width: 30rem;
-    max-width: 80rem;
-    gap: 10rem;
+    padding: 0 calc( (100vw - var(--project-card-width)) / 2);
+    min-height: var(--project-card-height-r);
+    min-width: var(--project-card-width-r);
+    gap: calc( (100vw - var(--project-card-width)) / 2);
     overflow-x: scroll;
     justify-content: flex-start;
 }
 
 .project-item{
     flex: 1 0 auto;
-    min-width: 0;
-    width: 40rem;
-    height: 30rem;
-    border-radius:5rem;
+    width: var(--project-card-width);
+    height: var(--project-card-height);
+    border-radius: 5rem;
     background-color:var(--main-text-color);
+    background-image: linear-gradient(45deg, var(--main-text-color), var(--main-bg-color));
 }
 
 
@@ -241,11 +245,16 @@ body{
     }
     #project-container{
         padding: 0rem 0rem;
+        width: var(--project-card-width-r);
+        gap: calc( (100vh - var(--project-card-width-r)) / 2);
     }
     /*have to specify project-cotnainer for some reason*/ 
     .project-item{
-        width: 30rem;
-        height: 60rem;
+        width: var(--project-card-width-r);
+        height: var(--project-card-height-r);
     }
 }
+
+
+
   

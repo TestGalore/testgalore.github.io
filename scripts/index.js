@@ -33,3 +33,7 @@ window.addEventListener('click', function() {
     counter = ++counter % numProjects;
 })
 
+window.addEventListener("resize", function(){
+    scrollAmountTillNextProject = window.innerWidth - parseInt(style.getPropertyValue("gap"));
+});
+

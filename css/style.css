@@ -22,27 +22,6 @@ body{
     color: var(--main-text-color);
 }
 
-/* VIEW PORT SIZE IS NOT AFFECT BY ZOOM */
-@media only screen and (max-width: 1400px) and (min-width: 601px){
-    #project-container{
-        flex-direction: column;
-    }
-}
-
-/*need to change width of project container */
-@media only screen and (max-width: 600px){
-    #intro-content{
-        flex-direction: column-reverse;
-    }
-    #project-container{
-        flex-direction: column;
-    }
-    /*have to specify project-cotnainer for some reason*/ 
-    #project-container .project-item{
-        width: 30rem;
-        height: 60rem;
-    }
-}
 /*------------------------Classes-------------------------*/
 
 .flex-container{
@@ -155,11 +134,12 @@ body{
 }
 
 #project-container{
-    margin: 5rem;
+    margin: 5rem 0;
+    padding: 0 20rem;
     min-height:40rem;
     min-width: 30rem;
     max-width: 80rem;
-    gap: 2rem;
+    gap: 10rem;
     overflow-x: scroll;
     justify-content: flex-start;
 }
@@ -244,5 +224,28 @@ body{
 .fade {
     opacity:0;
     transition: 1s all ease-out;
+}
+
+/* VIEW PORT SIZE IS NOT AFFECT BY ZOOM */
+@media only screen and (max-width: 1400px){
+    #project-container{
+        flex-direction: column;
+    }
+}
+
+/* PUT MEDIA QUERIES AT THE BOTTOM */
+/*need to change width of project container */
+@media only screen and (max-width: 600px){
+    #intro-content{
+        flex-direction: column-reverse;
+    }
+    #project-container{
+        padding: 0rem 0rem;
+    }
+    /*have to specify project-cotnainer for some reason*/ 
+    .project-item{
+        width: 30rem;
+        height: 60rem;
+    }
 }
   

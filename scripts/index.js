@@ -19,21 +19,35 @@ let projects = document.getElementsByClassName("project-item");
 
 let style = window.getComputedStyle(projectContainer);
 let scrollAmountTillNextProject = window.innerWidth - parseInt(style.getPropertyValue("gap"));
-console.log(projectContainer.scrollWidth);
 
+let projectItemWidth = projects[0].offsetWidth;
+
+let projectContainerLeft = window.innerWidth/2 - projectItemWidth/2 ;
+let projectContainerRight = window.innerWidth/2 + projectItemWidth/2;
 let counter = 0
-window.addEventListener('click', function() {
 
+window.addEventListener("resize", function(){
+    projectContainer.scrollLeft = 0;
+    scrollAmountTillNextProject = window.innerWidth - parseInt(style.getPropertyValue("gap"));
+    projectItemWidth = projects[0].offsetWidth;
+    projectContainerLeft = window.innerWidth/2 - projectItemWidth/2;
+    projectContainerRight = window.innerWidth/2 + projectItemWidth/2;
+});
+
+projectContainer.addEventListener('click', function(e){
+    if( e.clientX <= projectContainerLeft){
+        counter = --counter % numProjects;
+        if( counter < 0){
+            counter = numProjects-1;
+        }
+    }
+    if( e.clientX >= projectContainerRight){
+        counter = ++counter % numProjects;
+    }
     projectContainer.scrollTo({
         top: 0,
         left: scrollAmountTillNextProject*counter,
         behaviour: "smooth",
     });
-    counter = ++counter % numProjects;
-})
-
-window.addEventListener("resize", function(){
-    projectContainer.scrollLeft = 0;
-    scrollAmountTillNextProject = window.innerWidth - parseInt(style.getPropertyValue("gap"));
+    console.log(counter);
 });
-

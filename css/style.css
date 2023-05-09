@@ -129,6 +129,7 @@ body{
 /*------------------------Projects-------------------------*/
 
 #projects {
+    position: relative;
     /* doing height: 100% only seems to make it the size of the view port
     even if the body exceeds the size of the view port */
     min-height: 100%;
@@ -180,7 +181,7 @@ body{
     border: 0.5rem solid;
     border-color: var(--main-text-color);
     background-color:var(--main-bg-color);
-    z-index: 3;
+    z-index: 1;
 
     font-size: 3rem;
 }
@@ -257,6 +258,28 @@ body{
     opacity:0;
     transition: 1s all ease-out;
 }
+
+/*------------------------Triangle-------------------------*/
+
+
+.triangle-right {
+    position: absolute;
+    right: 3rem; 
+    padding: 3rem;
+    border: solid var(--main-text-color);
+    border-width: 0 3px 3px 0;
+    transform: rotate(-45deg);
+}
+
+.triangle-left {
+    position: absolute;
+    left: 3rem; 
+    padding: 3rem;
+    border: solid var(--main-text-color);
+    border-width: 0 3px 3px 0;
+    transform: rotate(135deg);
+}
+
 
 /* PUT MEDIA QUERIES AT THE BOTTOM */
 /*need to change width of project container */

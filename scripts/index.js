@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', function() {
         let scroll = window.scrollY;

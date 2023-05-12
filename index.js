@@ -11,19 +11,57 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+let projectList = [{
+    description : "Responsive portfolio to store  my current and future projects. Built using HTML, CSS, and Javascript.",
+    img : "./images/project1.PNG"
+}, {
+    description : "Responsive visualization of the A-star pathfinding algorithm using the manhattan distance as a metric. Built using HTML, CSS, and Javascript",
+    link : "https://elasticbop.github.io/projects/Pathfinding/index.html",
+    img : "./images/project2.PNG"        
+}
+];
+
 let projectContainer = document.getElementById("project-container");
 let projects = document.getElementsByClassName("project-item");
 
 let style = window.getComputedStyle(projectContainer);
 let scrollAmountTillNextProject = window.innerWidth - parseInt(style.getPropertyValue("gap"));
 
-let projectItemWidth = projects[0].offsetWidth;
+let projectItemWidth = 0;
 
 let projectContainerLeft = window.innerWidth/2 - projectItemWidth/2 ;
 let projectContainerRight = window.innerWidth/2 + projectItemWidth/2;
 let currentProject = 0;
-let numProjects = projects.length;
+let numProjects = 2;
 
+function computeValues(){
+    style = window.getComputedStyle(projectContainer);
+    scrollAmountTillNextProject = window.innerWidth - parseInt(style.getPropertyValue("gap"));
+    projectItemWidth = projects[0].offsetWidth;
+    projectContainerLeft = window.innerWidth/2 - projectItemWidth/2 ;
+    projectContainerRight = window.innerWidth/2 + projectItemWidth/2;
+}
+
+
+function addProject(project){
+    let pitem = document.createElement("div");
+    let pimagecon = document.createElement("div");
+    let pimage = document.createElement("img");
+    let ptextcon = document.createElement("div");
+    let pspan = document.createElement("span");
+    pspan.appendChild(document.createTextNode(project.description));
+    ptextcon.setAttribute("class", "project-item-text");
+    ptextcon.appendChild(pspan);
+    pimage.setAttribute("src", project.img);
+    pimage.setAttribute("alt", "No Image Available");
+    pimagecon.setAttribute("class", "flex-container project-item-image");
+    pimagecon.appendChild(pimage);
+    pitem.setAttribute("class", "project-item");
+    pitem.appendChild(pimagecon);
+    pitem.appendChild(ptextcon);
+    projectContainer.appendChild(pitem);
+    console.log(pitem);
+}
 
 //order of elements matter since we select the children based on hard coded index
 //z-index for the projectimage is null when first starting for some reason
@@ -43,12 +81,7 @@ function projectItemOnClick(e){
         projectImg.style.zIndex = 3;
         projectText.style.zIndex = 2;        
     }
-
 }
-
-for( let i = 0; i < projects.length; i++ ){
-    projects[i].addEventListener('click', projectItemOnClick)
-} 
 
 
 projectContainer.addEventListener('click', function(e){
@@ -70,6 +103,7 @@ projectContainer.addEventListener('click', function(e){
 });
 
 window.addEventListener("resize", function(){
+    currentProject = 0;
     projectContainer.scrollLeft = 0;
     scrollAmountTillNextProject = window.innerWidth - parseInt(style.getPropertyValue("gap"));
     projectItemWidth = projects[0].offsetWidth;
@@ -78,3 +112,13 @@ window.addEventListener("resize", function(){
 });
 
 
+function initialize() {
+    projectList.forEach(addProject);
+    projects = document.getElementsByClassName("project-item");
+    for( let i = 0; i < projects.length; i++ ){
+        projects[i].addEventListener('click', projectItemOnClick)
+    }
+    computeValues();
+}
+
+initialize();

@@ -323,6 +323,9 @@ body{
         width: calc(var(--project-card-width-r) - 1rem);
         height: calc(var(--project-card-height-r) - 1rem);
     }
+    #project-nav-arrows{
+        display:none;
+    }
 }
 
 

@@ -175,7 +175,7 @@ body{
     height: calc(var(--project-card-height) - 1rem);
     border-radius: 5rem;
     background-color:var(--main-text-color);
-    z-index: 3;
+    z-index: 2;
 }
 
 .project-item-image img{
@@ -196,7 +196,7 @@ body{
     border: 0.5rem solid;
     border-color: var(--main-text-color);
     background-color:var(--main-bg-color);
-    z-index: 2;
+    z-index: 3;
 
     font-size: 3rem;
 }

@@ -3,6 +3,13 @@
 let projectList = 
 [ 
     {
+        name: "ScheduleMe",
+        description : "Website to help students develop/share degree roadmaps",
+        codeLink : "https://github.com/ElasticBop/scheduleMe",
+        projLink : "https://schedule-me.fly.dev/",
+        img : "./images/scheduleme.png"        
+    },
+    {
         name: "A-Star Visualizer",
         description : "Built using HTML, CSS, and Javascript",
         codeLink : "https://github.com/ElasticBop/A-Star-Visualizer",
@@ -127,7 +134,7 @@ function projectItemOnClick(e){
     let projectText = parent.children[1];
 
     if(!projectImg.style.zIndex){
-        projectImg.style.zIndex = 1;
+        projectText.style.zIndex = 1;
     }
 
     if( projectImg.style.zIndex > projectText.style.zIndex  ){

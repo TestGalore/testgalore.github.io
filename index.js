@@ -7,14 +7,14 @@ let projectList =
         description : "Built using HTML, CSS, and Javascript",
         codeLink : "https://github.com/ElasticBop/A-Star-Visualizer",
         projLink : "https://elasticbop.github.io/projects/Pathfinding/index.html",
-        img : "./images/astar.PNG"        
+        img : "./images/astar.png"        
     },
     {
         name: "Portfolio",
         description : "Responsive. Built with HTML, CSS, and Javascript.",
         codeLink : "https://github.com/ElasticBop/elasticbop.github.io",
         projLink : "https://elasticbop.github.io",
-        img : "./images/portfolio.PNG"
+        img : "./images/portfolio.png"
     }
 ];
 

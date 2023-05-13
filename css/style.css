@@ -161,10 +161,12 @@ body{
     border-radius: 5rem;
     background-color: var(--main-bg-color);
     z-index: 4;
+    transition: 0.5s;
 }
 
 .project-item:hover{
     cursor: pointer;
+    transform:scale(1.02);
 }
 
 .project-item-image{
@@ -183,6 +185,7 @@ body{
     height: calc(100% - 1rem);
     border-radius: 5rem;
     object-fit: cover;
+    visibility:hidden;
 }
 
 .project-item-text{

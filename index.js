@@ -130,20 +130,23 @@ function projectItemOnClick(e){
     while(!parent.classList.contains("project-item")){
         parent = parent.parentNode;
     }
-    let projectImg = parent.children[0];
+    let projectImgCon = parent.children[0];
     let projectText = parent.children[1];
+    let projectImg = projectImgCon.children[0];
 
-    if(!projectImg.style.zIndex){
+    if(!projectImgCon.style.zIndex){
         projectText.style.zIndex = 1;
     }
 
-    if( projectImg.style.zIndex > projectText.style.zIndex  ){
+    if( projectImgCon.style.zIndex > projectText.style.zIndex  ){
         projectText.style.zIndex++;
-        projectImg.style.zIndex--;
+        projectImgCon.style.zIndex--;
+        projectImg.style.visibility = "hidden";
     }
     else{
         projectText.style.zIndex--;
-        projectImg.style.zIndex++;
+        projectImgCon.style.zIndex++;
+        projectImg.style.visibility = "visible";
     }
 }
 

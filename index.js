@@ -57,7 +57,7 @@ profilePic.addEventListener("click", function(){
             changeColors("white", "black");
             break;
         case 2:
-            changeColors("blue", "orange");
+            changeColors("#c2ffdc", "#1b252d");
             break;
         default:
             changeColors("black", "white");

@@ -10,8 +10,8 @@ html{
 }
 
 :root{
-    --main-bg-color: rgb(0, 0, 0);
-    --main-text-color: rgb(255, 255, 255);
+    --main-bg-color: rgb(255, 255, 255);
+    --main-text-color: rgb(0, 0, 0);
     --secondary-text-color:rgb(0, 248, 145);
     --scrollbar-thumb-color: #1c1c1c;
     --project-card-width: 40rem;

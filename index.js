@@ -54,10 +54,10 @@ profilePic.addEventListener("click", function(){
     currentColorScheme = ++currentColorScheme % 2;
     switch(currentColorScheme){
         case 1:
-            changeColors("white", "black");
+            changeColors("black", "white");
             break;
         default:
-            changeColors("black", "white");
+            changeColors("white", "black");
 
     }   
 });

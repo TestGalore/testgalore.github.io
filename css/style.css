@@ -18,6 +18,10 @@ html{
     --project-card-height: 30rem;
     --project-card-width-r: 30rem;
     --project-card-height-r: 50rem;
+    --intro-card-width: 60rem;
+    --intro-card-height: 40rem;
+    --intro-card-width-r: 30rem;
+    --intro-card-height-r: 50rem;
 }
 
 body{
@@ -81,16 +85,40 @@ body{
 
 /*------------------------Profile-------------------------*/
 #intro{
+    position: relative;
+    min-width: calc( var(--intro-card-width-r) );
+    min-height: 100%;
+}
+
+#intro-container{
     position:relative;
+    width: var(--intro-card-width);
+    height: var(--intro-card-height);
 }
 
 #intro-content{
+    position: absolute;
     gap: 2rem;
-    min-width: 21rem;
-    min-height: 100%;
-    visibility: 100%;
+    width: calc( var(--intro-card-width) - 1rem );
+    height: calc( var(--intro-card-height) - 1rem );
+    border: 5px solid var(--main-text-color);
+    border-radius: 5rem;
+    background-color: var(--main-bg-color);
+    top: 0px;
+    right: 0px;
+    z-index: 3;
 }
 
+#intro-content-bg{
+    position: absolute;
+    width: calc( var(--intro-card-width) - 1rem );
+    height: calc( var(--intro-card-height) - 1rem );
+    background-color: var(--main-text-color);
+    bottom: 0px;
+    left: 0px;
+    z-index: 2;
+    border-radius: 5rem;
+}
 
 #intro-content-text{
     flex-direction: column;
@@ -105,7 +133,6 @@ body{
 #intro-content-text p{
     font-size: 3rem;
     text-align: center;
-
 }
 
 #profile-pic{
@@ -335,8 +362,19 @@ body{
 /* PUT MEDIA QUERIES AT THE BOTTOM */
 /*need to change width of project container */
 @media only screen and (max-width: 600px){
+    
+    #intro-container{
+        width: var(--intro-card-width-r);
+        height: var(--intro-card-height-r);
+    }
     #intro-content{
         flex-direction: column-reverse;
+        width: calc(var(--intro-card-width-r) - 1rem);
+        height: calc(var(--intro-card-height-r) - 1rem);
+    }
+    #intro-content-bg{
+        width: calc(var(--intro-card-width-r) - 1rem);
+        height: calc(var(--intro-card-height-r) - 1rem);
     }
     #project-container{
         flex-direction:column;

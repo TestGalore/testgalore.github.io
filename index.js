@@ -51,13 +51,10 @@ window.addEventListener('scroll', function() {
 });
 
 profilePic.addEventListener("click", function(){
-    currentColorScheme = ++currentColorScheme % 3;
+    currentColorScheme = ++currentColorScheme % 2;
     switch(currentColorScheme){
         case 1:
             changeColors("white", "black");
-            break;
-        case 2:
-            changeColors("#c2ffdc", "#1b252d");
             break;
         default:
             changeColors("black", "white");

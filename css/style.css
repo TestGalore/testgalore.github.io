@@ -115,6 +115,10 @@ body{
     border-radius:50%;
 }
 
+#profile-pic:hover{
+    cursor: pointer;
+}
+
 #profile-pic img{
     height: 19rem;
     width: 19rem;
@@ -357,6 +361,10 @@ body{
     #project-nav-arrows{
         display:none;
     }
+    .project-item:hover{
+        transform:none;
+    }
+    
 }
 
 

@@ -25,9 +25,11 @@ let projectList =
     }
 ];
 
+let root = document.querySelector(':root');
 let projectContainer = document.getElementById("project-container");
 let style = window.getComputedStyle(projectContainer);
 let scrollAmountTillNextProject = window.innerWidth - parseInt(style.getPropertyValue("gap"));
+let profilePic = document.querySelector("#profile-pic");
 
 let currentProject = 0;
 let numProjects = 0;
@@ -35,18 +37,32 @@ let projects = null;
 let projectItemWidth = 0;
 let projectContainerLeft = 0;
 let projectContainerRight = 0;
+let currentColorScheme = 0;
 
-document.addEventListener('DOMContentLoaded', function() {
-    window.addEventListener('scroll', function() {
-        let scroll = window.scrollY;
-        let arrow = document.querySelector('.arrow');
-        if (scroll >= 1) {
-            arrow.classList.add('fade');
-        } else{
-            arrow.classList.remove('fade');
-        }
+window.addEventListener('scroll', function() {
+    let scroll = window.scrollY;
+    let arrow = document.querySelector('.arrow');
+    if (scroll >= 1) {
+        arrow.classList.add('fade');
+    } else{
+        arrow.classList.remove('fade');
+    }
 
-    });
+});
+
+profilePic.addEventListener("click", function(){
+    currentColorScheme = ++currentColorScheme % 3;
+    switch(currentColorScheme){
+        case 1:
+            changeColors("white", "black");
+            break;
+        case 2:
+            changeColors("blue", "orange");
+            break;
+        default:
+            changeColors("black", "white");
+
+    }   
 });
 
 projectContainer.addEventListener('click', function(e){
@@ -106,7 +122,7 @@ function addProject(project){
     }
     pP.appendChild(document.createTextNode(project.description));
     pH.appendChild(document.createTextNode(project.name));
-    pTextCon.setAttribute("class", "project-item-text");
+    pTextCon.setAttribute("class", " project-item-text");
     pTextCon.appendChild(pH);
     pTextCon.appendChild(pP);
     pTextCon.appendChild(pLinksCon);
@@ -150,10 +166,17 @@ function projectItemOnClick(e){
     }
 }
 
+function changeColors(bgColor, textColor){
+    root.style.setProperty("--main-bg-color", bgColor);
+    root.style.setProperty("--main-text-color", textColor);
+}
+
+//reveal page
 function uncover(){
     document.body.style.visibility = "visible";
 }
 
+//set up variables and initial page
 function initialize() {
     projectList.forEach(addProject);
     projects = document.getElementsByClassName("project-item");

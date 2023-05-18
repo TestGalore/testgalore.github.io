@@ -30,6 +30,7 @@ let projectContainer = document.getElementById("project-container");
 let style = window.getComputedStyle(projectContainer);
 let scrollAmountTillNextProject = window.innerWidth - parseInt(style.getPropertyValue("gap"));
 let profilePic = document.querySelector("#profile-pic");
+let projectArrows = document.querySelector("#project-nav-arrows");
 
 let currentProject = 0;
 let numProjects = 0;
@@ -38,6 +39,8 @@ let projectItemWidth = 0;
 let projectContainerLeft = 0;
 let projectContainerRight = 0;
 let currentColorScheme = 0;
+
+let scrollEnabled = true;
 
 window.addEventListener('scroll', function() {
     let scroll = window.scrollY;
@@ -77,6 +80,17 @@ projectContainer.addEventListener('click', function(e){
         left: scrollAmountTillNextProject*currentProject,
         behaviour: "smooth",
     });
+});
+
+projectContainer.addEventListener("mouseover", () => {
+    scrollEnabled = false;
+    projectArrows.style.opacity = "100%";
+
+});
+
+projectContainer.addEventListener("mouseout", () => {
+    scrollEnabled = true;  
+    projectArrows.style.opacity = "0%";
 });
 
 window.addEventListener("resize", function(){
@@ -173,6 +187,19 @@ function uncover(){
     document.body.style.visibility = "visible";
 }
 
+function enableScroll(){
+    setInterval( ()=>{
+        if( scrollEnabled ){
+            currentProject = ++currentProject % numProjects;
+            projectContainer.scrollTo({
+                top: 0,
+                left: scrollAmountTillNextProject*currentProject,
+                behaviour: "smooth",
+            });
+        }
+    }, 2000)
+}
+
 //set up variables and initial page
 function initialize() {
     projectList.forEach(addProject);
@@ -185,3 +212,4 @@ function initialize() {
 }
 
 initialize();
+enableScroll();

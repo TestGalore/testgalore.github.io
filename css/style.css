@@ -261,6 +261,31 @@ body{
     transform: scale(1.2);
 }
 
+/*------------------------Project Arrow-------------------------*/
+
+#project-nav-arrows{
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.arrow-right {
+    position: absolute;
+    right: 3rem; 
+    padding: 3rem;
+    border: solid var(--main-text-color);
+    border-width: 0 3px 3px 0;
+    transform: rotate(-45deg);
+}
+
+.arrow-left {
+    position: absolute;
+    left: 3rem; 
+    padding: 3rem;
+    border: solid var(--main-text-color);
+    border-width: 0 3px 3px 0;
+    transform: rotate(135deg);
+}
+
 
 /*------------------------Intro Arrow-------------------------*/
 
@@ -334,27 +359,6 @@ body{
 .fade {
     opacity:0;
     transition: 1s all ease-out;
-}
-
-/*------------------------Project Arrow-------------------------*/
-
-
-.arrow-right {
-    position: absolute;
-    right: 3rem; 
-    padding: 3rem;
-    border: solid var(--main-text-color);
-    border-width: 0 3px 3px 0;
-    transform: rotate(-45deg);
-}
-
-.arrow-left {
-    position: absolute;
-    left: 3rem; 
-    padding: 3rem;
-    border: solid var(--main-text-color);
-    border-width: 0 3px 3px 0;
-    transform: rotate(135deg);
 }
 
 /*------------------------Project Card Animation TODO-------------------------*/

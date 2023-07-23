@@ -5,22 +5,22 @@ let projectList =
     {
         name: "ScheduleMe",
         description : "Website to help students develop/share degree roadmaps",
-        codeLink : "https://github.com/ElasticBop/scheduleMe",
+        codeLink : "https://github.com/TestGalore/scheduleMe",
         projLink : "https://schedule-me.fly.dev/",
         img : "./images/scheduleme.png"        
     },
     {
         name: "A-Star Visualizer",
         description : "Built using HTML, CSS, and Javascript",
-        codeLink : "https://github.com/ElasticBop/A-Star-Visualizer",
-        projLink : "https://elasticbop.github.io/projects/Pathfinding/index.html",
+        codeLink : "https://github.com/TestGalore/A-Star-Visualizer",
+        projLink : "https://TestGalore.github.io/projects/Pathfinding/index.html",
         img : "./images/astar.png"        
     },
     {
         name: "Portfolio",
         description : "Responsive. Built with HTML, CSS, and Javascript.",
-        codeLink : "https://github.com/ElasticBop/elasticbop.github.io",
-        projLink : "https://elasticbop.github.io",
+        codeLink : "https://github.com/TestGalore/elasticbop.github.io",
+        projLink : "https://TestGalore.github.io",
         img : "./images/portfolio.png"
     }
 ];

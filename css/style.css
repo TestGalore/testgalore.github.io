@@ -56,8 +56,21 @@ body{
     user-select: none;
  }
 
+/*------------------------Card-------------------------*/
 
- 
+.card{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: calc( 100% - 1rem);
+    height: calc( 100% - 1rem);
+    border: 5px solid var(--main-text-color);
+    border-radius: 5rem;
+    background-color: var(--main-bg-color);
+    box-shadow: -10px 10px var(--main-text-color);
+}
+
+
 /*------------------------NavBar-------------------------*/
 
 #navbar{
@@ -127,47 +140,28 @@ body{
     min-height: 100%;
 }
 
-#intro-container{
+#intro-card-container{
     position:relative;
     width: var(--intro-card-width);
     height: var(--intro-card-height);
 }
 
-#intro-content{
-    position: absolute;
+#intro-card{
     gap: 2rem;
-    width: calc( var(--intro-card-width) - 1rem );
-    height: calc( var(--intro-card-height) - 1rem );
-    border: 5px solid var(--main-text-color);
-    border-radius: 5rem;
-    background-color: var(--main-bg-color);
-    top: 0px;
-    right: 0px;
     z-index: 3;
 }
 
-#intro-content-bg{
-    position: absolute;
-    width: calc( var(--intro-card-width) - 1rem );
-    height: calc( var(--intro-card-height) - 1rem );
-    background-color: var(--main-text-color);
-    bottom: 0px;
-    left: 0px;
-    z-index: 2;
-    border-radius: 5rem;
-}
-
-#intro-content-text{
+#intro-card-text{
     flex-direction: column;
     width: 20rem;
 }
 
-#intro-content-text h1{
+#intro-card-text h1{
    font-size: 5rem;
    white-space:nowrap;
 }
 
-#intro-content-text p{
+#intro-card-text p{
     font-size: 3rem;
     text-align: center;
 }
@@ -227,7 +221,6 @@ body{
     width: var(--project-card-width);
     height: var(--project-card-height);
     border-radius: 5rem;
-    background-color: var(--main-bg-color);
     z-index: 4;
     transition: 0.5s;
 }
@@ -239,8 +232,8 @@ body{
 
 .project-item-image{
     position: absolute;
-    bottom: 0px;
-    left: 0px;
+    top: 0px;
+    right: 0px;
     width: calc(var(--project-card-width) - 1rem);
     height: calc(var(--project-card-height) - 1rem);
     border-radius: 5rem;
@@ -267,6 +260,7 @@ body{
     border: 0.5rem solid;
     border-color: var(--main-text-color);
     background-color:var(--main-bg-color);
+    box-shadow: -10px 10px var(--main-text-color);
     z-index: 3;
 
     font-size: 3rem;
@@ -404,16 +398,16 @@ body{
 /*need to change width of project container */
 @media only screen and (max-width: 600px){
     
-    #intro-container{
+    #intro-card-container{
         width: var(--intro-card-width-r);
         height: var(--intro-card-height-r);
     }
-    #intro-content{
+    #intro-card{
         flex-direction: column-reverse;
         width: calc(var(--intro-card-width-r) - 1rem);
         height: calc(var(--intro-card-height-r) - 1rem);
     }
-    #intro-content-bg{
+    #intro-card-bg{
         width: calc(var(--intro-card-width-r) - 1rem);
         height: calc(var(--intro-card-height-r) - 1rem);
     }

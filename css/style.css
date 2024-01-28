@@ -56,17 +56,17 @@ body{
     user-select: none;
  }
 
+
+ 
 /*------------------------NavBar-------------------------*/
 
 #navbar{
-    position: fixed;
-    background:black;
-    color:white;
+    position: absolute;
     height: 7rem;
     width: 100%;
     z-index: 50;
     font-size: 3rem;
-    text-align:center;
+    text-align:right;
     text-overflow:clip;
     padding:2rem;
 }
